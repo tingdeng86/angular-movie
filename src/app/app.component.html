@@ -1,13 +1,7 @@
-<h1>Genres</h1>
-<select [(ngModel)]="selectedGenre" (change)="selected()">
-  <option *ngFor="let genre of _genreArray" [ngValue]="genre.id">{{genre.name}}</option>
-</select>
-
-<h1>Movies</h1>
-<ul>
-  <li *ngFor="let movie of _movieArray">
-    {{movie.title}}
-    <!--Hint: You need to modify this line dynamically to show the proper image -->
-    <!-- <img src="http://image.tmdb.org/t/p/w185/nBNZadXqJSdt05SHLqgT0HuC5Gm.jpg" /> -->
-  </li>
-</ul>
+<header>
+  <nav>
+    <a routerLink="/home" routerLinkActive="active">Home</a> |
+    <a routerLink="/about" routerLinkActive="active">About</a>
+    </nav>
+    <router-outlet></router-outlet>`
+</header>
