@@ -1,0 +1,18 @@
+<header [ngClass]="status ? 'show' : ''" > 
+    <h1 class="title"><a href="#0">Angular-Movie</a></h1>
+  
+    <button class="btn-menu" id="btn-menu" (click)="clickMenu()">
+      <span class="button-content">
+          <span class="text">Menu</span>
+          <span class="bar"></span>
+      </span><!-- end button-content -->
+  </button>
+    <nav id="main-navigation" [ngClass]="status ? 'activated' : ''">
+      <ul>
+        <li><a routerLink="/home" routerLinkActive="active">Home</a> </li>
+        <li><a routerLink="/about" routerLinkActive="active">About</a></li>
+      </ul>
+    </nav>
+  </header>
+  <router-outlet></router-outlet>`
+

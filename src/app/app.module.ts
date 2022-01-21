@@ -10,10 +10,11 @@ import { HomePageComponent } from './app.home-page';
 import { AboutPageComponent } from './app.about-page';
 import { routing } from './app.routing';
 import { MovieComponent } from './components/movie/movie.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
-    AppComponent, HomePageComponent,AboutPageComponent, MovieComponent
+    AppComponent, HomePageComponent,AboutPageComponent, MovieComponent, HeaderComponent
   ],
   imports: [
     BrowserModule,

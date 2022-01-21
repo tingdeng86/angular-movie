@@ -1,1 +1,73 @@
 /* You can add global styles to this file, and also import other style files */
+@charset "utf-8";
+/* CSS Document */
+
+/* CSS Reset */
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+	box-sizing: border-box;
+  }
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+	line-height: 1;
+	margin: 0 auto;
+	/* Remove the below line of code... */
+	background-color: rgb(197, 104, 104);
+}
+
+p, li, a, b {
+	font-family: 'Merriweather', serif;
+}
+
+p {
+	line-height: 1.4;
+    margin: 0;
+}
+
+/* Responsive Image Reset */
+
+img {
+	max-width: 100%;
+	height: auto;	
+}
+
+/* End Responsive Image Reset */
+
+/* End CSS Reset */
+
+/* Utility classes */
+
+
+/* End Utility classes */
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Merriweather', serif;
+	font-weight: 700;
+	font-style: italic;
+	margin: 16px 0;	
+}
+
+h1 {
+	font-size: 1.5em;	
+}
+
+h2 {
+	font-size: 1.25em;	
+}
+
+header h1 {
+	margin: 0;
+	margin-right: auto;
+	font-size: 1.5em;
+	font-weight: 400;
+	margin-left: 10px;
+}
+
+header h1 a {
+	font-family: 'Pacifico', cursive;	
+	color: #9E0002;
+	text-decoration: none;		
+}

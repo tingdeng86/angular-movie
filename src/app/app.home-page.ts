@@ -7,12 +7,13 @@ import { DatePipe } from '@angular/common';
 @Component({
     selector: 'app-home-page',
     templateUrl: 'app.home-page.html',
+    styleUrls: ['./app.home-page.css']
 })
 export class HomePageComponent {
     _movieArray!: Array<any>;
     _genreArray!: Array<any>;
     _http: HttpClient;
-    selectedGenre: number = 16;
+    selectedGenre: number=16;
     page: number = 1;
     totalPages: number = 1;
     API_KEY = "d6441bcd0c7210bd6baec2676da16bd1"; // Use v3

@@ -1,27 +1,19 @@
-<h1>Genres</h1>
-<select [(ngModel)]="selectedGenre" (change)="selected()">
-  <option *ngFor="let genre of _genreArray" [ngValue]="genre.id">{{genre.name}}</option>
-</select>
-<div class="pagination">
-    <button (click)="previousPage()" [disabled]="page<=1" >Previous</button>
-    <p>{{page}}/{{totalPages}}</p>
-    <button (click)="nextPage()" [disabled]="page==totalPages">Next</button>
-</div>
-<h1>Movies</h1>
-<div *ngFor="let movie of _movieArray">
-    <app-movie title={{movie.title}} 
-                release_date={{movie.release_date}} 
-                vote_average={{movie.vote_average}}
-                overview={{movie.overview}}
-                poster_path={{movie.poster_path}}
-    ></app-movie>
-</div>
+<main>
+  <div class="top-bar">
+  <select [(ngModel)]="selectedGenre" (change)="selected()">
+       <option *ngFor="let genre of _genreArray" [ngValue]="genre.id">{{genre.name}}</option>
+    </select>
+    <div class="pagination">
+      <button (click)="previousPage()" [disabled]="page<=1">-</button>
+      <p class="page">{{page}}/{{totalPages}}</p>
+      <button (click)="nextPage()" [disabled]="page==totalPages">+</button>
+    </div>
+  </div>
 
-
-
-<!-- <ul>
-  <li *ngFor="let movie of _movieArray">
-    {{movie.title}}
-  </li>
-</ul> -->
-
+  <div class="movies-container">
+    <div *ngFor="let movie of _movieArray">
+      <app-movie title={{movie.title}} release_date={{movie.release_date}} vote_average={{movie.vote_average}}
+        overview={{movie.overview}} poster_path={{movie.poster_path}}></app-movie>
+    </div>
+  </div>
+</main>
