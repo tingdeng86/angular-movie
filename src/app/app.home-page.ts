@@ -26,14 +26,13 @@ export class HomePageComponent {
         + this.API_KEY
         + `&primary_release_date.gte=${this.getFormattedDate(this.getDateRange())}`
         + `&primary_release_date.lte=${this.getFormattedDate(new Date())}`
-        + `&page=${this.page}&with_genres=${this.selectedGenre}`;
+        + `&page=1&with_genres=${this.selectedGenre}`;
 
     constructor(private http: HttpClient) {
         this._http = http;
     }
 
     ngOnInit() {
-
         this.getDateRange();
         this.getMovies();
         this.getGenres();
@@ -41,11 +40,6 @@ export class HomePageComponent {
     selected() {
         this.page = 1
         console.log(this.selectedGenre)
-        this.BASE_URL = 'http://api.themoviedb.org/3/discover/movie?api_key='
-            + this.API_KEY
-            + `&primary_release_date.gte=${this.getFormattedDate(this.getDateRange())}`
-            + `&primary_release_date.lte=${this.getFormattedDate(new Date())}`
-            + `&page=${this.page}&with_genres=${this.selectedGenre}`;
         this.getMovies()
 
     }
@@ -55,7 +49,7 @@ export class HomePageComponent {
         this.getMovies()
     }
     previousPage() {
-        this.page -= 1;
+        this.page -= 1;        
         this.getMovies()
     }
     getDateRange() {
@@ -74,6 +68,11 @@ export class HomePageComponent {
 
 
     getMovies() {
+        this.BASE_URL = 'http://api.themoviedb.org/3/discover/movie?api_key='
+            + this.API_KEY
+            + `&primary_release_date.gte=${this.getFormattedDate(this.getDateRange())}`
+            + `&primary_release_date.lte=${this.getFormattedDate(new Date())}`
+            + `&page=${this.page}&with_genres=${this.selectedGenre}`;
         this._http.get<any>(this.BASE_URL)
             .subscribe({
                 next: (data) => {
