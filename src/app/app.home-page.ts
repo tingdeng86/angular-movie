@@ -81,7 +81,6 @@ export class HomePageComponent {
                     this.totalPages = data.total_pages;
                     console.log("Page number: " + page
                         + " Total Pages: " + this.totalPages);
-
                     this._movieArray = data.results;
                     console.log(this._movieArray);
                     console.log(this.BASE_URL)

@@ -1,10 +1,9 @@
 <div class="movie-card">
     <div class="movie-poster">
-        <!-- {{poster_path === null ?
-            <img src='../../../assets/no-movie-poster.jpg' alt="No Poster" /> :
-            <img src={{baseImageUrl + poster_path}} alt={{title}} />
-        }} -->
-       <img src="https://image.tmdb.org/t/p/w300{{poster_path}}" alt={{title}} />
+        <img *ngIf="!poster_path" src='../../../assets/no-movie-poster.jpg' alt="No Poster" />
+        <img *ngIf="poster_path" src="https://image.tmdb.org/t/p/w300{{poster_path}}" alt={{title}} />      
+
+       
     </div>
     <div class="movie-info">
         <p class="movie-title">{{title}}</p>
