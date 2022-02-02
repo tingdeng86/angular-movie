@@ -9,7 +9,6 @@
       <button (click)="nextPage()" [disabled]="page==totalPages">+</button>
     </div>
   </div>
-
   <div class="movies-container">
     <div *ngFor="let movie of _movieArray">
       <app-movie title={{movie.title}} release_date={{movie.release_date}} vote_average={{movie.vote_average}}

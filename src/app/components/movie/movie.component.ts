@@ -13,8 +13,6 @@ export class MovieComponent implements OnInit {
   @Input() overview!: any;
   @Input() poster_path!: any;
  
-
-
   ngOnInit(): void {
   }
 

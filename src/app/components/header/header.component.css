@@ -1,10 +1,8 @@
 header {
-	/* padding: 12px 0; */
 	display: flex;
 	align-items: center;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	/* height: 60px; */
     background-color: grey;
 }
 
@@ -27,7 +25,6 @@ nav.activated {
     transition: height 0.3s ease, visibility 0s;
     visibility: visible;
     height: 120px;
-	/* margin-top:10px; */
 	display: block;
 }
 
@@ -39,7 +36,6 @@ nav ul {
 
 nav a {
     text-decoration: none;
-    /* padding: 0 20px; */
     font-size: 1.2em;
     display: block;
     border-right: none;
@@ -146,9 +142,7 @@ nav a:focus {
         display: grid;
         grid-template-columns: 1fr 200px;
         grid-template-areas: " title nav";
-        padding-right: 20px;
-        
-    
+        padding-right: 20px;     
     }
 
     .title{

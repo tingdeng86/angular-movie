@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { DatePipe } from '@angular/common';
 
-
-
 @Component({
     selector: 'app-home-page',
     templateUrl: 'app.home-page.html',
@@ -13,20 +11,14 @@ export class HomePageComponent {
     _movieArray!: Array<any>;
     _genreArray!: Array<any>;
     _http: HttpClient;
-    selectedGenre: number=16;
+    selectedGenre: number = 16;
     page: number = 1;
     totalPages: number = 1;
     API_KEY = "d6441bcd0c7210bd6baec2676da16bd1"; // Use v3
 
-
     GENRE_URL = 'https://api.themoviedb.org/3/genre/movie/list?api_key='
         + this.API_KEY
         + '&language=en-US';
-    BASE_URL = 'http://api.themoviedb.org/3/discover/movie?api_key='
-        + this.API_KEY
-        + `&primary_release_date.gte=${this.getFormattedDate(this.getDateRange())}`
-        + `&primary_release_date.lte=${this.getFormattedDate(new Date())}`
-        + `&page=1&with_genres=${this.selectedGenre}`;
 
     constructor(private http: HttpClient) {
         this._http = http;
@@ -39,25 +31,23 @@ export class HomePageComponent {
     }
     selected() {
         this.page = 1
-        console.log(this.selectedGenre)
+        // console.log(this.selectedGenre)
         this.getMovies()
 
     }
-
     nextPage() {
         this.page += 1;
         this.getMovies()
     }
     previousPage() {
-        this.page -= 1;        
+        this.page -= 1;
         this.getMovies()
     }
     getDateRange() {
-        let sixtyDaysAgo = new Date();
-        sixtyDaysAgo.setDate(sixtyDaysAgo.getDate() - 30);
-        return sixtyDaysAgo
+        let thirtyDaysAgo = new Date();
+        thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30);
+        return thirtyDaysAgo
     }
-
 
     getFormattedDate(dt: Date) {
         let pipe = new DatePipe('en-US')
@@ -65,15 +55,13 @@ export class HomePageComponent {
         return pipe.transform(now, 'YYYY-MM-dd')
     }
 
-
-
     getMovies() {
-        this.BASE_URL = 'http://api.themoviedb.org/3/discover/movie?api_key='
+        let BASE_URL = 'http://api.themoviedb.org/3/discover/movie?api_key='
             + this.API_KEY
             + `&primary_release_date.gte=${this.getFormattedDate(this.getDateRange())}`
             + `&primary_release_date.lte=${this.getFormattedDate(new Date())}`
             + `&page=${this.page}&with_genres=${this.selectedGenre}`;
-        this._http.get<any>(this.BASE_URL)
+        this._http.get<any>(BASE_URL)
             .subscribe({
                 next: (data) => {
                     let page = data.page;
@@ -81,8 +69,8 @@ export class HomePageComponent {
                     console.log("Page number: " + page
                         + " Total Pages: " + this.totalPages);
                     this._movieArray = data.results;
-                    console.log(this._movieArray);
-                    console.log(this.BASE_URL)
+                    // console.log(this._movieArray);
+                    // console.log(BASE_URL)
                 },
                 error: (er) => {
                     alert(er);
