@@ -38,6 +38,9 @@
  .movie-title{
    font-weight:bold;
  }
+ .movie-info p{
+   font-size: 1.5em;
+ }
 
 .movie-overview{
     line-height:1.2em;
@@ -48,7 +51,12 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
  }
- @media (min-width: 1000px) {
+ @media (min-width: 680px){
+  .movie-info p{
+    font-size: 1em;
+  }
+ }
+ @media (min-width: 1024px) {
     /* Movies*/
     .movie-card{
         display: flex;
@@ -61,5 +69,8 @@
       height: 100%;
       display: block;
       aspect-ratio: 6 / 8.5;
+    }
+    .movie-info{
+      min-height: 150px;
     }
 }

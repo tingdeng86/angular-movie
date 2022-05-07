@@ -7,7 +7,8 @@
         <p class="movie-title">{{title}}</p>
         <p><b>Release Date: </b>{{release_date}}</p>
         <p><b>Rating: </b>{{vote_average}}</p>
-        <p class="movie-overview"><b>Overview: </b>{{overview}}</p>
+        <p class="movie-overview" *ngIf="overview"><b>Overview: </b>{{overview}}</p>
+        <p class="movie-overview" *ngIf="!overview"><b>Overview: </b>Currently don't have an overview yet... Stay tune!</p>
     </div>
          
 </div>

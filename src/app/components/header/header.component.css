@@ -136,7 +136,7 @@ nav a:focus {
     top: 0;
     transform: rotate(-45deg);	
 }
-@media (min-width: 660px) {
+@media (min-width: 680px) {
     /*nav */
     header {
         display: grid;
@@ -181,7 +181,7 @@ nav a:focus {
     nav a:hover,
     nav a:active,
     nav a:focus {
-        background-color: rgba(212, 188, 188, 0.3);
+        background-color: rgba(212, 188, 188, 0.5);
         outline: none;
     }
     

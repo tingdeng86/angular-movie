@@ -31,7 +31,6 @@ export class HomePageComponent {
     }
     selected() {
         this.page = 1
-        // console.log(this.selectedGenre)
         this.getMovies()
 
     }
@@ -66,11 +65,10 @@ export class HomePageComponent {
                 next: (data) => {
                     let page = data.page;
                     this.totalPages = data.total_pages;
-                    console.log("Page number: " + page
-                        + " Total Pages: " + this.totalPages);
+                    // console.log("Page number: " + page
+                    //     + " Total Pages: " + this.totalPages);
                     this._movieArray = data.results;
-                    // console.log(this._movieArray);
-                    // console.log(BASE_URL)
+
                 },
                 error: (er) => {
                     alert(er);
